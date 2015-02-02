@@ -1120,6 +1120,7 @@ static int msm_lsm_ioctl_compat(struct snd_pcm_substream *substream,
 	if (PCM_RUNTIME_CHECK(substream))
 		return -ENXIO;
 
+	prtd = runtime->private_data;
 	if (!substream || !substream->private_data) {
 		pr_err("%s: Invalid %s\n", __func__,
 			(!substream) ? "substream" : "private_data");
